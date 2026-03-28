@@ -7,6 +7,7 @@ import {
   Star, 
   Maximize2, 
   Play, 
+  Pause,
   X, 
   ChevronLeft, 
   ChevronRight 
@@ -188,8 +189,9 @@ export function PhotoGallery({ photos, eventTitle }: PhotoGalleryProps) {
               <button
                 onClick={() => setIsPlaying(!isPlaying)}
                 className="rounded-full bg-white/10 p-2 transition-colors hover:bg-white/20"
+                title={isPlaying ? "Pause" : "Play"}
               >
-                {isPlaying ? <X className="h-6 w-6" /> : <Play className="h-6 w-6" />}
+                {isPlaying ? <Pause className="h-6 w-6" /> : <Play className="h-6 w-6" />}
               </button>
               <button
                 onClick={() => {
@@ -197,6 +199,7 @@ export function PhotoGallery({ photos, eventTitle }: PhotoGalleryProps) {
                   setIsPlaying(false);
                 }}
                 className="rounded-full bg-white/10 p-2 transition-colors hover:bg-white/20"
+                title="Close"
               >
                 <X className="h-6 w-6" />
               </button>

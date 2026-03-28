@@ -16,7 +16,7 @@ export default function Login() {
 
   useEffect(() => {
     if (!loading && user) {
-      router.push('/');
+      router.replace('/');
     }
   }, [user, loading, router]);
 
@@ -36,7 +36,7 @@ export default function Login() {
       setError(error.message);
       setIsSubmitting(false);
     } else {
-      router.push('/');
+      router.replace('/');
     }
   };
 
