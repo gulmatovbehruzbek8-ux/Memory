@@ -120,7 +120,13 @@ export default function Login() {
           </button>
         </form>
 
-        <div className="text-center">
+        <div className="text-center space-y-4">
+          <p className="text-sm text-foreground/60">
+            Don't have an account?{' '}
+            <Link href="/signup" className="font-bold text-foreground hover:underline">
+              Sign Up
+            </Link>
+          </p>
           <p className="text-xs text-foreground/40">
             Securely powered by Supabase Auth.
           </p>

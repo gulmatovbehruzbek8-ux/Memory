@@ -13,7 +13,10 @@ export default function ForgotPassword() {
 
   const handleResetRequest = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!isSupabaseConfigured()) return;
+    if (!isSupabaseConfigured()) {
+      setError('Supabase is not configured. Please check your environment variables.');
+      return;
+    }
 
     setIsSubmitting(true);
     setError(null);
