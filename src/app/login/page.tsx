@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { useAuth } from '@/components/AuthProvider';
+import Link from 'next/link';
 import { Camera, Lock, Mail, Loader2 } from 'lucide-react';
 
 export default function Login() {
@@ -83,7 +84,15 @@ export default function Login() {
           </div>
 
           <div className="space-y-2">
-            <label className="text-sm font-medium" htmlFor="password">Password</label>
+            <div className="flex items-center justify-between">
+              <label className="text-sm font-medium" htmlFor="password">Password</label>
+              <Link 
+                href="/forgot-password" 
+                className="text-xs font-medium text-foreground/60 hover:text-foreground transition-colors"
+              >
+                Forgot password?
+              </Link>
+            </div>
             <div className="relative">
               <Lock className="absolute left-3 top-3 h-5 w-5 text-foreground/40" />
               <input
